@@ -5,6 +5,7 @@
     [ ../../system/hardware/configuration.nix
       ../../system/hardware/kernel.nix
       ../../system/hardware/systemd.nix
+      ../../system/hardware/opengl.nix
       ../../app/editor/editor-extension/discord-presence-lsp/discord-presence-lsp.nix
     ];
 
