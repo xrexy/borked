@@ -49,6 +49,7 @@
     desktop = null;
     publicShare = null;
     extraConfig = {
+      XDG_CODE_DIR = "${config.home.homeDirectory}/Code";
       XDG_DOTFILES_DIR = "${config.home.homeDirectory}/.dotfiles";
       XDG_ARCHIVE_DIR = "${config.home.homeDirectory}/Archive";
       XDG_VM_DIR = "${config.home.homeDirectory}/Machines";
