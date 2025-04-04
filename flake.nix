@@ -15,7 +15,7 @@
 
       userSettings = rec {
         username = "desktop";
-        name = "rkolev";
+        name = "xrexy";
         email = "rkolev@proton.me";
 
         # Don't use trailing slashes
