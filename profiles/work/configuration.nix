@@ -6,6 +6,7 @@
       ../../system/hardware/kernel.nix
       ../../system/hardware/systemd.nix
       ../../system/hardware/opengl.nix
+      ../../system/hardware/printing.nix
       ../../app/editor/editor-extension/discord-presence-lsp/discord-presence-lsp.nix
     ];
 
