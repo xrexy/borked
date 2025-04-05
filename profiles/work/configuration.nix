@@ -11,6 +11,7 @@
       ../../system/hardware/time.nix
       ../../system/hardware/sound.nix
       ../../system/app/noisetorch.nix
+      ../../system/app/bitwarden.nix
     ];
 
   # List packages installed in system profile
