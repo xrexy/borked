@@ -7,7 +7,7 @@
         profile = "personal";
 
         system = "x86_64-linux";
-        hostname = "desktop";
+        hostname = "nixos";
         timezone = "Europe/Sofia";
         locale = "en_US.UTF-8";
         extraLocale = "bg_BG.UTF-8"; # can just use locale
