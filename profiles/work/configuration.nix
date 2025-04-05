@@ -63,12 +63,8 @@
     uid = 1000;
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
 
   fonts.fontDir.enable = true;
 

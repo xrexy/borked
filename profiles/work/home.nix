@@ -9,6 +9,7 @@
 
   imports = [
     ../../user/app/git.nix
+    (./. + "../../../user/app/browser" + ("/" + userSettings.browser) + ".nix")
   ];
 
   home.packages = (with pkgs; [
