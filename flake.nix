@@ -4,7 +4,6 @@
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
     let
       systemSettings = rec {
-        # profile = "work";
         profile = "personal";
 
         system = "x86_64-linux";

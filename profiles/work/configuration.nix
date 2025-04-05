@@ -9,7 +9,6 @@
       ../../system/hardware/opengl.nix
       ../../system/hardware/printing.nix
       ../../system/hardware/time.nix
-      ../../app/editor/editor-extension/discord-presence-lsp/discord-presence-lsp.nix
     ];
 
   # Bootloader.
@@ -91,6 +90,7 @@
     kitty
     wget
     home-manager
+    fastfetch
   ];
 
   fonts.fontDir.enable = true;
