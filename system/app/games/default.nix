@@ -4,7 +4,7 @@
   imports = [
     ./feral-gamemode.nix
     ./heroic.nix
-    ./lutirs.nix
+    ./lutris.nix
     ./prismlauncher.nix
     ./steam.nix
   ];
