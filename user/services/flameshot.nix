@@ -7,7 +7,6 @@
       General = {
         showHelp = false;
         showDesktopNotification = false;
-        disableTrayIcon = true;
         copyPathAfterSave = true;
       };
     };
