@@ -70,6 +70,12 @@
     uid = 1000;
   };
 
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 25565 ];
+    allowedUDPPorts = [ 25565 ];
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
