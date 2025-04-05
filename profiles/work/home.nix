@@ -9,11 +9,11 @@
 
   imports = [
     ../../user/app/git.nix
+    ../../user/app/zed-editor.nix
     (./. + "../../../user/app/browser" + ("/" + userSettings.browser) + ".nix")
   ];
 
   home.packages = (with pkgs; [
-    zed-editor
     git
     wine
     bottles

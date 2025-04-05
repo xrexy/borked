@@ -1,4 +1,4 @@
-{ config, pkgs, systemSettings, userSettings, ... }:
+{ pkgs, systemSettings, userSettings, ... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
