@@ -11,5 +11,5 @@
     extraConfig = { XDG_GAMES_DIR = "${config.home.homeDirectory}/Games"; };
   };
 
-  imports = [ ../work/home.nix ];
+  imports = [ ../work/home.nix ../../user/app/protonup.nix ];
 }
