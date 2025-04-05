@@ -9,6 +9,7 @@
       ../../system/hardware/graphics.nix
       ../../system/hardware/printing.nix
       ../../system/hardware/time.nix
+      ../../system/hardware/sound.nix
     ];
 
   # Bootloader.
@@ -57,17 +58,7 @@
     variant = "";
   };
 
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+    # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
