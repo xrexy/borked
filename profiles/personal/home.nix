@@ -1,4 +1,4 @@
-{ pkgs, userSettings, ... }:
+{ userSettings, config, ... }:
 
 {
   programs.home-manager.enable = true;
@@ -6,6 +6,12 @@
 
   home.username = userSettings.username;
   home.homeDirectory = userSettings.homeDirectory;
+
+  xdg.userDirs = {
+    extraConfig = {
+      XDG_GAMES_DIR = "${config.home.homeDirectory}/Games";
+    };
+  };
 
   imports = [ ../work/home.nix ];
 }
