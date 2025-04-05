@@ -7,5 +7,6 @@
     ./lutris.nix
     ./prismlauncher.nix
     ./steam.nix
+    ./logmein-hamachi.nix
   ];
 }
