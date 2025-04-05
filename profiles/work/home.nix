@@ -24,6 +24,7 @@
     mediainfo
     libmediainfo
     audio-recorder
+    lazygit
   ]);
 
   home.sessionVariables = {

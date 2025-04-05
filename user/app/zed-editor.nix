@@ -37,5 +37,32 @@
         };
       };
     };
+
+    userKeymaps = [
+      {
+        context = "Workspace";
+        bindings = {
+          alt-g = [
+            "task::Spawn"
+            {
+              task_name = "lazygit";
+              reveal_target = "center";
+            }
+          ];
+          "alt-d d" = [
+            "task::Spawn"
+            {
+              task_name = "dev";
+              reveal_target = "center";
+            }
+          ];
+          "alt-c c" = "project_panel::CollapseAllEntries";
+        };
+      }
+      {
+        context = "Editor";
+        bindings = { alt-space = "editor::ToggleAutoSignatureHelp"; };
+      }
+    ];
   };
 }
