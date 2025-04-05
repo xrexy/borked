@@ -11,6 +11,7 @@
     ../../system/hardware/printing.nix
     ../../system/hardware/time.nix
     ../../system/hardware/sound.nix
+    ../../system/services/zerotierone.nix
     ../../system/app/flameshot.nix
     ../../system/app/noisetorch.nix
     ../../system/app/bitwarden.nix
