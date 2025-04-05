@@ -8,13 +8,11 @@
   home.homeDirectory = userSettings.homeDirectory;
 
   imports = [
-    ../../user/app/git/git.nix
+    ../../user/app/git.nix
   ];
 
   home.packages = (with pkgs; [
     zed-editor
-    zsh
-    kitty
     git
     wine
     bottles
