@@ -14,6 +14,7 @@
     ../../system/app/flameshot.nix
     ../../system/app/noisetorch.nix
     ../../system/app/bitwarden.nix
+    ../../system/app/discord.nix
   ];
 
   # List packages installed in system profile
