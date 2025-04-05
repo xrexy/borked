@@ -6,7 +6,7 @@
   imports = [ ../../system/hardware/configuration.nix
       ../../system/hardware/kernel.nix
       ../../system/hardware/systemd.nix
-      ../../system/hardware/opengl.nix
+      ../../system/hardware/graphics.nix
       ../../system/hardware/printing.nix
       ../../system/hardware/time.nix
     ];
