@@ -3,16 +3,17 @@
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  imports = [ ../../system/hardware/configuration.nix
-      ../../system/hardware/kernel.nix
-      ../../system/hardware/systemd.nix
-      ../../system/hardware/graphics.nix
-      ../../system/hardware/printing.nix
-      ../../system/hardware/time.nix
-      ../../system/hardware/sound.nix
-      ../../system/app/noisetorch.nix
-      ../../system/app/bitwarden.nix
-    ];
+  imports = [
+    ../../system/hardware/configuration.nix
+    ../../system/hardware/kernel.nix
+    ../../system/hardware/systemd.nix
+    ../../system/hardware/graphics.nix
+    ../../system/hardware/printing.nix
+    ../../system/hardware/time.nix
+    ../../system/hardware/sound.nix
+    ../../system/app/noisetorch.nix
+    ../../system/app/bitwarden.nix
+  ];
 
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
@@ -60,8 +61,9 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "networkmanager" "wheel" "input" "render" "video" "dialout" ];
-    packages = [];
+    extraGroups =
+      [ "networkmanager" "wheel" "input" "render" "video" "dialout" ];
+    packages = [ ];
     uid = 1000;
   };
 
@@ -76,11 +78,8 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal
-      pkgs.xdg-desktop-portal-gtk
-    ];
+    extraPortals = [ pkgs.xdg-desktop-portal pkgs.xdg-desktop-portal-gtk ];
   };
 
-   system.stateVersion = "24.11";
+  system.stateVersion = "24.11";
 }

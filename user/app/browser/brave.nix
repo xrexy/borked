@@ -11,8 +11,6 @@
     "x-scheme-handler/unknown" = "brave-browser.desktop";
   };
 
-  home.sessionVariables = {
-    DEFAULT_BROWSER = "${pkgs.brave}/bin/brave";
-  };
+  home.sessionVariables = { DEFAULT_BROWSER = "${pkgs.brave}/bin/brave"; };
 
 }

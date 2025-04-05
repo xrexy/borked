@@ -23,7 +23,8 @@
         dotfilesDir = homeDirectory + "/.dotfiles";
 
         wm = "hyprland"; # hyprland / plasma
-        wmType = if ((wm == "hyprland") || (wm == "plasma")) then "wayland" else "x11";
+        wmType =
+          if ((wm == "hyprland") || (wm == "plasma")) then "wayland" else "x11";
 
         editor = "zeditor";
         spawnEditor = editor;
@@ -33,18 +34,20 @@
 
       lib = nixpkgs.lib;
 
-      nixpkgs-patched =
-        (import inputs.nixpkgs { system = systemSettings.system; rocmSupport = true; }).applyPatches {
-          name = "nixpkgs-patched";
-          src = inputs.nixpkgs;
-          patches = [ ];
-        };
+      nixpkgs-patched = (import inputs.nixpkgs {
+        system = systemSettings.system;
+        rocmSupport = true;
+      }).applyPatches {
+        name = "nixpkgs-patched";
+        src = inputs.nixpkgs;
+        patches = [ ];
+      };
 
       pkgs = import nixpkgs-patched {
         system = systemSettings.system;
         config = {
-            allowUnfree = true;
-            allowUnfreePredicate = (_: true);
+          allowUnfree = true;
+          allowUnfreePredicate = (_: true);
         };
         # overlays = [ inputs.rust-overlay.overlays.default ];
       };
@@ -61,7 +64,10 @@
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           system = systemSettings.system;
-          modules = [ (./. + "/profiles" + ("/" + systemSettings.profile) + "/configuration.nix") ];
+          modules = [
+            (./. + "/profiles" + ("/" + systemSettings.profile)
+              + "/configuration.nix")
+          ];
           specialArgs = {
             inherit systemSettings;
             inherit userSettings;
@@ -73,7 +79,9 @@
       homeConfigurations = {
         desktop = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ (./. + "/profiles" + ("/" + systemSettings.profile) + "/home.nix") ];
+          modules = [
+            (./. + "/profiles" + ("/" + systemSettings.profile) + "/home.nix")
+          ];
           extraSpecialArgs = {
             inherit systemSettings;
             inherit userSettings;

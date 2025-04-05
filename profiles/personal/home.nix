@@ -8,9 +8,7 @@
   home.homeDirectory = userSettings.homeDirectory;
 
   xdg.userDirs = {
-    extraConfig = {
-      XDG_GAMES_DIR = "${config.home.homeDirectory}/Games";
-    };
+    extraConfig = { XDG_GAMES_DIR = "${config.home.homeDirectory}/Games"; };
   };
 
   imports = [ ../work/home.nix ];
