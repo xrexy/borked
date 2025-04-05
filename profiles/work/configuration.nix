@@ -13,6 +13,7 @@
     ../../system/hardware/sound.nix
     ../../system/services/zerotierone.nix
     ../../system/app/flameshot.nix
+    ../../system/app/spotify.nix
     ../../system/app/noisetorch.nix
     ../../system/app/bitwarden.nix
     ../../system/app/discord.nix
