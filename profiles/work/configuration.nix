@@ -10,6 +10,7 @@
       ../../system/hardware/printing.nix
       ../../system/hardware/time.nix
       ../../system/hardware/sound.nix
+      ../../system/app/noisetorch.nix
     ];
 
   # List packages installed in system profile
