@@ -2,7 +2,7 @@
 
 {
   home.packages =
-    (with pkgs; [ zed-editor nil nixd nixfmt vue-language-server ]);
+    (with pkgs; [ zed-editor nil nixd nixfmt-classic vue-language-server ]);
 
   programs.zed-editor = {
     enable = true;
