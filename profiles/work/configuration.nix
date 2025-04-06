@@ -10,7 +10,7 @@
     ../../system/hardware/graphics.nix
     ../../system/hardware/printing.nix
     ../../system/hardware/time.nix
-    ../../system/hardware/sound.nix
+    ../../system/services/pipewire.nix
     ../../system/services/zerotierone.nix
     ../../system/app/flameshot.nix
     ../../system/app/spotify.nix
