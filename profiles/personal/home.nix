@@ -15,5 +15,9 @@
     };
   };
 
-  imports = [ ../work/home.nix ../../user/app/protonup.nix ];
+  imports = [
+    ../work/home.nix
+    ../../user/app/protonup.nix
+    ../../user/services/easyeffects.nix
+  ];
 }
