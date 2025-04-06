@@ -13,6 +13,7 @@
     ../../system/services/pipewire.nix
     ../../system/services/zerotierone.nix
     ../../system/app/flameshot.nix
+    ../../system/app/nix-ld.nix
     ../../system/app/spotify.nix
     ../../system/app/noisetorch.nix
     ../../system/app/bitwarden.nix
