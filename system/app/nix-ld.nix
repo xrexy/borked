@@ -11,6 +11,5 @@
     openssl
     curl
     expat
-    ca-bundle
   ];
 }
