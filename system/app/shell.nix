@@ -27,9 +27,12 @@
         "ssh"
       ];
     };
+
+    shellInit = ''
+      export SSL_CERT_FILE="/etc/ssl/certs/ca-certificates.crt"
+    '';
   };
 
   environment.shells = [ pkgs.zsh ];
   users.defaultUserShell = pkgs.zsh;
-
 }
