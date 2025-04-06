@@ -10,6 +10,7 @@
   imports = [
     ../../user/app/git.nix
     ../../user/app/zed-editor.nix
+    ../../user/app/bun.nix
     ../../user/services/flameshot.nix
     (./. + "../../../user/app/browser" + ("/" + userSettings.browser) + ".nix")
   ];
