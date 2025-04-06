@@ -28,6 +28,7 @@
     wget
     home-manager
     fastfetch
+    xclip
   ];
 
   # Bootloader.
