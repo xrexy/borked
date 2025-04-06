@@ -12,6 +12,7 @@
     ../../system/hardware/time.nix
     ../../system/services/pipewire.nix
     ../../system/services/zerotierone.nix
+    ../../system/app/shell.nix
     ../../system/app/flameshot.nix
     ../../system/app/nix-ld.nix
     ../../system/app/spotify.nix
@@ -23,7 +24,6 @@
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
     vim
-    zsh
     kitty
     wget
     home-manager
@@ -67,7 +67,7 @@
     isNormalUser = true;
     description = userSettings.name;
     extraGroups =
-      [ "networkmanager" "wheel" "input" "render" "video" "dialout" ];
+      [ "networkmanager" "wheel" "docker" "input" "render" "video" "dialout" ];
     packages = [ ];
     uid = 1000;
   };
@@ -82,10 +82,6 @@
   nixpkgs.config.allowUnfree = true;
 
   fonts.fontDir.enable = true;
-
-  programs.zsh.enable = true;
-  environment.shells = [ pkgs.zsh ];
-  users.defaultUserShell = pkgs.zsh;
 
   xdg.portal = {
     enable = true;
