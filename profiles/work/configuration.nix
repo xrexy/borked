@@ -12,8 +12,11 @@
     ../../system/hardware/graphics.nix
     ../../system/hardware/printing.nix
     ../../system/hardware/time.nix
+    ../../system/hardware/disable-nvidia.nix # the day you see me buy anything nvidia is the day I'll force myself into a mental asylum
+
     ../../system/services/pipewire.nix
     ../../system/services/zerotierone.nix
+
     ../../system/app/shell.nix
     ../../system/app/flameshot.nix
     ../../system/app/nix-ld.nix
