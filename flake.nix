@@ -1,7 +1,7 @@
 {
   description = "Borked nix";
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, ... }:
     let
       systemSettings = rec {
         profile = "personal";
@@ -33,33 +33,8 @@
       };
 
       lib = nixpkgs.lib;
-
-      nixpkgs-patched = (import inputs.nixpkgs {
-        system = systemSettings.system;
-        rocmSupport = true;
-      }).applyPatches {
-        name = "nixpkgs-patched";
-        src = inputs.nixpkgs;
-        patches = [ ];
-      };
-
-      pkgs = import nixpkgs-patched {
-        system = systemSettings.system;
-        config = {
-          allowUnfree = true;
-          allowUnfreePredicate = (_: true);
-        };
-        # overlays = [ inputs.rust-overlay.overlays.default ];
-      };
-
-      pkgs-unstable = import inputs.nixpkgs-patched {
-        system = systemSettings.system;
-        config = {
-          allowUnfree = true;
-          allowUnfreePredicate = (_: true);
-        };
-        overlays = [ inputs.rust-overlay.overlays.default ];
-      };
+      pkgs = nixpkgs.legacyPackages.${systemSettings.system};
+      pkgs-stable = nixpkgs-stable.legacyPackages.${systemSettings.system};
     in {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
@@ -72,6 +47,7 @@
             inherit systemSettings;
             inherit userSettings;
             inherit inputs;
+            inherit pkgs-stable;
           };
         };
       };
@@ -86,6 +62,7 @@
             inherit systemSettings;
             inherit userSettings;
             inherit inputs;
+            inherit pkgs-stable;
           };
         };
       };
