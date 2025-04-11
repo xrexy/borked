@@ -3,7 +3,7 @@
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, ... }:
     let
-      systemSettings = rec {
+      systemSettings = {
         profile = "personal";
 
         system = "x86_64-linux";
@@ -22,14 +22,13 @@
         homeDirectory = "/home/" + username;
         dotfilesDir = homeDirectory + "/.dotfiles";
 
-        wm = "hyprland"; # hyprland / plasma
-        wmType =
-          if ((wm == "hyprland") || (wm == "plasma")) then "wayland" else "x11";
-
         editor = "zeditor";
         spawnEditor = editor;
         terminal = "kitty";
         browser = "brave";
+
+        font = "Monocraft";
+        fontPkg = pkgs.monocraft;
       };
 
       lib = nixpkgs.lib;
@@ -77,5 +76,9 @@
 
     home-manager-stable.url = "github:nix-community/home-manager/release-24.05";
     home-manager-stable.inputs.nixpkgs.follows = "nixpkgs-stable";
+
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    stylix.url = "github:danth/stylix";
   };
 }

@@ -2,16 +2,23 @@
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
 
   imports = [
+    ../../system/wm/hyprland.nix
+    ../../system/theme.nix
+
     ../../system/hardware/configuration.nix
-    ../../system/hardware/kernel.nix
+    ../../system/hardware/bootloader.nix
+    ../../system/hardware/garbage-collector.nix
+    ../../system/hardware/screen.nix
+    ../../system/hardware/display-manager.nix
     ../../system/hardware/systemd.nix
     ../../system/hardware/graphics.nix
     ../../system/hardware/printing.nix
     ../../system/hardware/time.nix
-    ../../system/services/pipewire.nix
-    ../../system/services/zerotierone.nix
+    ../../system/hardware/disable-nvidia.nix # the day you see me buy anything nvidia is the day I'll force myself into a mental asylum
+
     ../../system/app/shell.nix
     ../../system/app/flameshot.nix
     ../../system/app/nix-ld.nix
@@ -19,6 +26,8 @@
     ../../system/app/noisetorch.nix
     ../../system/app/bitwarden.nix
     ../../system/app/discord.nix
+
+    ../../system/services
   ];
 
   # List packages installed in system profile
@@ -31,18 +40,14 @@
     xclip
   ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Enable ram swap
+  zramSwap.enable = true;
 
   networking.hostName = systemSettings.hostname;
 
   # Enable networking
   networking.networkmanager.enable = true;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Set your time zone.
-  time.timeZone = systemSettings.timezone;
 
   # Select internationalisation properties.
   i18n.defaultLocale = systemSettings.locale;
@@ -78,11 +83,6 @@
     allowedTCPPorts = [ 25565 ];
     allowedUDPPorts = [ 25565 ];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  fonts.fontDir.enable = true;
 
   programs.ssh = { startAgent = true; };
 
