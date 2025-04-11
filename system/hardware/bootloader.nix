@@ -1,19 +1,21 @@
 { pkgs, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  imports = [ ./plymouth ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = 2;
-  boot.initrd.enable = true;
-  boot.initrd.systemd.enable = true;
-  boot.consoleLogLevel = 3;
-  boot.plymouth = {
-    enable = true;
-    font =
-      "${pkgs.jetbrains-mono}/share/fonts/truetype/JetBrainsMono-Regular.ttf";
-    themePackages = [ pkgs.catppuccin-plymouth ];
-    theme = "catppuccin-macchiato";
+  boot = {
+    kernelPackages = pkgs.linuxPackages_xanmod_latest;
+    consoleLogLevel = 3;
+
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      timeout = 2;
+    };
+
+    initrd = {
+      enable = true;
+      systemd.enable = true;
+    };
   };
 }

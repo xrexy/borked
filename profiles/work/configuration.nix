@@ -5,9 +5,7 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    ../../system/wm/hyprland.nix
-    ../../system/theme.nix
-
+    ../../system/hardware/fonts.nix
     ../../system/hardware/configuration.nix
     ../../system/hardware/bootloader.nix
     ../../system/hardware/garbage-collector.nix
@@ -28,6 +26,9 @@
     ../../system/app/discord.nix
 
     ../../system/services
+
+    ../../system/wm/hyprland.nix
+    ../../system/theme.nix
   ];
 
   # List packages installed in system profile

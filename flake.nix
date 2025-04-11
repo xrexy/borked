@@ -31,12 +31,15 @@
         fontPkg = pkgs.monocraft;
       };
 
-      lib = nixpkgs.lib;
-      pkgs = nixpkgs.legacyPackages.${systemSettings.system};
-      pkgs-stable = nixpkgs-stable.legacyPackages.${systemSettings.system};
+      pkgs = import nixpkgs { system = systemSettings.system; };
+      pkgs-stable = import nixpkgs-stable.legacyPackages {
+        system = systemSettings.system;
+      };
+
+      lib = pkgs.lib;
     in {
       nixosConfigurations = {
-        nixos = lib.nixosSystem {
+        nixos = nixpkgs.lib.nixosSystem {
           system = systemSettings.system;
           modules = [
             (./. + "/profiles" + ("/" + systemSettings.profile)
@@ -47,6 +50,7 @@
             inherit userSettings;
             inherit inputs;
             inherit pkgs-stable;
+            inherit lib;
           };
         };
       };
@@ -62,6 +66,7 @@
             inherit userSettings;
             inherit inputs;
             inherit pkgs-stable;
+            inherit lib;
           };
         };
       };

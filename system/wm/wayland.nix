@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ../fonts.nix ../services/dbus.nix ];
+  imports = [ ../services/dbus.nix ];
 
   environment.systemPackages = with pkgs; [
     wayland
