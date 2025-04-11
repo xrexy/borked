@@ -3,7 +3,7 @@ let
   hypr-pkgs =
     inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in {
-  imports = [ ./wayland.nix ../services/gnome-keyring-nix ];
+  imports = [ ./wayland.nix ];
 
   programs.hyprland = {
     enable = true;
@@ -12,14 +12,29 @@ in {
     portalPackage = hypr-pkgs.xdg-desktop-portal-hyprland;
   };
 
-  services.xserver = {
-    excludePackages = [ pkgs.xterm ];
-    displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-      theme = "chili";
-      enableHidpi = true;
-      package = pkgs.sddm;
-    };
-  };
+  environment.systemPackages = with pkgs; [
+    pyprland
+    hyprpicker
+    hyprcursor
+    hyprlock
+    hypridle
+    hyprpaper
+    starship
+    helix
+    zathura
+    mpv
+    vlc
+    imv
+  ];
+
+  # services.xserver = {
+  #   excludePackages = [ pkgs.xterm ];
+  #   displayManager.sddm = {
+  #     enable = true;
+  #     wayland.enable = true;
+  #     theme = "chili";
+  #     enableHidpi = true;
+  #     package = pkgs.sddm;
+  #   };
+  # };
 }

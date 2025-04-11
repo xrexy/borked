@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ../fonts.nix ../services/dbus.nix ../services/gnome-keyring.nix ];
+  imports = [ ../fonts.nix ../services/dbus.nix ];
 
   environment.systemPackages = with pkgs; [
     wayland

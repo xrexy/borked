@@ -1,10 +1,10 @@
 { pkgs, ... }:
 
 {
+  programs.dconf.enable = true;
   services.dbus = {
     enable = true;
-    packages = [ pkgs.dconf ];
+    implementation = "broker";
+    packages = with pkgs; [ xfce.xfconf gnome2.GConf ];
   };
-
-  programs.dconf = { enable = true; };
 }

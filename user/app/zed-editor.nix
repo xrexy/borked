@@ -8,13 +8,21 @@
     nixfmt-classic
     package-version-server
     vue-language-server
+    hyprls
   ]);
 
   programs.zed-editor = {
     enable = true;
 
-    extensions =
-      [ "html" "nix" "warp-one-dark" "bearded-icon-theme" "vue" "emmet" ];
+    extensions = [
+      "html"
+      "nix"
+      "warp-one-dark"
+      "bearded-icon-theme"
+      "vue"
+      "emmet"
+      "toml"
+    ];
 
     userSettings = {
       theme = "Warp One Dark";
