@@ -41,6 +41,7 @@
     figlet
     ydotool
     grimblast
+    unrar
   ];
 
   # Enable ram swap
