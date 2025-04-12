@@ -3,7 +3,10 @@
 {
   environment.systemPackages = with pkgs;
     [
-      discord
+      (discord.override {
+        withOpenASAR = true;
+        withTTS = true;
+      })
       # vesktop
     ];
 }

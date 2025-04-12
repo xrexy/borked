@@ -19,22 +19,11 @@ in {
     hyprlock
     hypridle
     hyprpaper
-    starship
+    wezterm
     helix
     zathura
     mpv
     vlc
     imv
   ];
-
-  # services.xserver = {
-  #   excludePackages = [ pkgs.xterm ];
-  #   displayManager.sddm = {
-  #     enable = true;
-  #     wayland.enable = true;
-  #     theme = "chili";
-  #     enableHidpi = true;
-  #     package = pkgs.sddm;
-  #   };
-  # };
 }

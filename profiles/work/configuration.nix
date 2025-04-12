@@ -17,8 +17,7 @@
     ../../system/hardware/time.nix
     ../../system/hardware/disable-nvidia.nix # the day you see me buy anything nvidia is the day I'll force myself into a mental asylum
 
-    ../../system/app/shell.nix
-    ../../system/app/flameshot.nix
+    ../../system/app/zsh.nix
     ../../system/app/nix-ld.nix
     ../../system/app/spotify.nix
     ../../system/app/noisetorch.nix
@@ -39,6 +38,7 @@
     home-manager
     fastfetch
     xclip
+    figlet
   ];
 
   # Enable ram swap

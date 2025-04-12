@@ -39,9 +39,6 @@
     xdg-utils
     wtype
     wlrctl
-    waybar
-    rofi-wayland
-    dunst
     avizo
     wlogout
     gifsicle

@@ -9,9 +9,12 @@
 
   imports = [
     ../../user/store.nix
+    ../../user/theme.nix
     ../../user/app/git.nix
     ../../user/app/zed-editor.nix
     ../../user/app/bun.nix
+    ../../user/app/kitty.nix
+    ../../user/app/zoxide.nix
     (./. + "../../../user/app/browser" + ("/" + userSettings.browser) + ".nix")
   ];
 
@@ -66,8 +69,4 @@
   # TODO Fix mime associations
   xdg.mimeApps.associations.added = { };
 
-  gtk.iconTheme = {
-    package = pkgs.papirus-icon-theme;
-    name = "Papirus-Dark";
-  };
 }

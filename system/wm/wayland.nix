@@ -14,12 +14,16 @@
     })
   ];
 
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    theme = "chili";
+    enableHidpi = true;
+    package = pkgs.kdePackages.sddm;
+  };
+
   services.xserver = {
     enable = true;
-    xkb = {
-      layout = "us";
-      variant = "";
-      options = "caps:escape";
-    };
+    excludePackages = [ pkgs.xterm ];
   };
 }
