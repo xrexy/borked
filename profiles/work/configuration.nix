@@ -42,6 +42,7 @@
     ydotool
     grimblast
     unrar
+    p7zip
   ];
 
   # Enable ram swap
