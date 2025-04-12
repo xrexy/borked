@@ -1,5 +1,9 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ vesktop ];
+  environment.systemPackages = with pkgs;
+    [
+      discord
+      # vesktop
+    ];
 }
