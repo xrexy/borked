@@ -8,10 +8,10 @@
   home.homeDirectory = userSettings.homeDirectory;
 
   imports = [
+    ../../user/store.nix
     ../../user/app/git.nix
     ../../user/app/zed-editor.nix
     ../../user/app/bun.nix
-    ../../user/services/flameshot.nix
     (./. + "../../../user/app/browser" + ("/" + userSettings.browser) + ".nix")
   ];
 
@@ -51,6 +51,7 @@
     desktop = null;
     publicShare = null;
     extraConfig = {
+      XDG_MOVIES_DIR = "${config.home.homeDirectory}/Media/Movies";
       XDG_CODE_DIR = "${config.home.homeDirectory}/Code";
       XDG_DOTFILES_DIR = "${config.home.homeDirectory}/.dotfiles";
       XDG_ARCHIVE_DIR = "${config.home.homeDirectory}/Archive";
@@ -67,7 +68,6 @@
 
   gtk.iconTheme = {
     package = pkgs.papirus-icon-theme;
-    # name = if (config.stylix.polarity == "dark") then "Papirus-Dark" else "Papirus-Light";
     name = "Papirus-Dark";
   };
 }

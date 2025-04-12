@@ -10,7 +10,7 @@
         hostname = "nixos";
         timezone = "Europe/Sofia";
         locale = "en_US.UTF-8";
-        extraLocale = "bg_BG.UTF-8"; # can just use locale
+        extraLocale = "bg_BG.UTF-8";
       };
 
       userSettings = rec {
@@ -20,7 +20,7 @@
 
         # Don't use trailing slashes
         homeDirectory = "/home/" + username;
-        dotfilesDir = homeDirectory + "/.dotfiles";
+        dotfilesDir = "~/.dotfiles";
 
         editor = "zeditor";
         spawnEditor = editor;
@@ -31,15 +31,12 @@
         fontPkg = pkgs.monocraft;
       };
 
-      pkgs = import nixpkgs { system = systemSettings.system; };
-      pkgs-stable = import nixpkgs-stable.legacyPackages {
-        system = systemSettings.system;
-      };
-
-      lib = pkgs.lib;
+      lib = nixpkgs.lib;
+      pkgs = nixpkgs.legacyPackages.${systemSettings.system};
+      pkgs-stable = nixpkgs-stable.legacyPackages.${systemSettings.system};
     in {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        nixos = lib.nixosSystem {
           system = systemSettings.system;
           modules = [
             (./. + "/profiles" + ("/" + systemSettings.profile)
@@ -50,7 +47,6 @@
             inherit userSettings;
             inherit inputs;
             inherit pkgs-stable;
-            inherit lib;
           };
         };
       };
@@ -58,6 +54,7 @@
       homeConfigurations = {
         desktop = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+
           modules = [
             (./. + "/profiles" + ("/" + systemSettings.profile) + "/home.nix")
           ];
@@ -66,7 +63,6 @@
             inherit userSettings;
             inherit inputs;
             inherit pkgs-stable;
-            inherit lib;
           };
         };
       };
@@ -76,8 +72,8 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-24.05";
 
-    home-manager-unstable.url = "github:nix-community/home-manager/master";
-    home-manager-unstable.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager/master";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager-stable.url = "github:nix-community/home-manager/release-24.05";
     home-manager-stable.inputs.nixpkgs.follows = "nixpkgs-stable";
