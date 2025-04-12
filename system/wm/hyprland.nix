@@ -14,6 +14,7 @@ in {
 
   environment.systemPackages = with pkgs; [
     pyprland
+    hyprland
     hyprpicker
     hyprcursor
     hyprlock

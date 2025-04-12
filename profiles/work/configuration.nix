@@ -39,6 +39,8 @@
     fastfetch
     xclip
     figlet
+    ydotool
+    grimblast
   ];
 
   # Enable ram swap
