@@ -2,9 +2,6 @@
     "layer": "top",
     "position": "top",
 
-    "height": 16,
-    // "width": 1280,
-
     "spacing": 4,
 
     // Load Modules
