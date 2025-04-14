@@ -1,16 +1,41 @@
+# https://github.com/mylinuxforwork/hyprland-starter/blob/main/dotfiles/.config/dunst/dunstrc
+
 [global]
 frame_color = "#cad3f5"
 separator_color= frame
-font = "Monocraft"
+font = "Monocraft" 9
 corner_radius = 12
-offset = 5x5
-origin = top-left
-monitor = 1;
+offset = 0x20
+origin = top-center
 notification_limit = 4
 gap_size = 8
 frame_width = 1
 width = 300
-height = 150
+height = (0,300)
+follow = keyboard
+scale = 0;
+transperancy = 30
+separator_height = 2
+padding = 8
+text_icon_padding = 0
+sort = yes
+alignment = left
+vertical_alignment = center
+ellipsize = middle
+stack_duplicates = true
+hide_duplicate_count = false
+show_indicators = true
+enable_recursive_icon_lookup = true
+
+icon_theme = "Papirus-Dark"
+icon_position = left
+
+title = Dunst;
+class = dunst;
+
+mouse_left_click = do_action, close_current
+mouse_middle_click = close_current
+mouse_right_click = close_all
 
 [urgency_low]
 background = "#24273A"

@@ -46,6 +46,7 @@
     starship
     htop
     alacritty
+    dmenu
   ];
 
   # Enable ram swap
