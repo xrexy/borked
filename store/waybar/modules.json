@@ -162,6 +162,7 @@
       "car": "",
       "default": ["", " ", " "]
     },
+    // TODO focus on it if it's already open
     "on-click": "pavucontrol"
   },
 
