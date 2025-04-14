@@ -43,6 +43,9 @@
     grimblast
     unrar
     p7zip
+    starship
+    htop
+    alacritty
   ];
 
   # Enable ram swap
