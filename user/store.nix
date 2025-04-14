@@ -5,5 +5,6 @@
     ".config/hypr".source = ../store/hypr;
     ".config/rofi".source = ../store/rofi;
     ".config/waybar".source = ../store/waybar;
+    ".config/dunst".source = ../store/dunst;
   };
 }

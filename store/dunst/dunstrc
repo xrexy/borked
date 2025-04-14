@@ -1,0 +1,26 @@
+[global]
+frame_color = "#cad3f5"
+separator_color= frame
+font = "Monocraft"
+corner_radius = 12
+offset = 5x5
+origin = top-left
+monitor = 1;
+notification_limit = 4
+gap_size = 8
+frame_width = 1
+width = 300
+height = 150
+
+[urgency_low]
+background = "#24273A"
+foreground = "#CAD3F5"
+
+[urgency_normal]
+background = "#24273A"
+foreground = "#CAD3F5"
+
+[urgency_critical]
+background = "#24273A"
+foreground = "#CAD3F5"
+frame_color = "#F5A97F"

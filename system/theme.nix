@@ -13,6 +13,7 @@
     waybar
     rofi-wayland
     dunst
+    libnotify
 
     # (pkgs.fluent-gtk-theme.overrideAttrs (oldAttrs: {
     #   colorVariants = [ "dark" ];
