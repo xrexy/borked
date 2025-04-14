@@ -31,6 +31,7 @@
       ui_font_size = 14;
       buffer_font_size = 12;
 
+      lsp_highlight_debounce = 9999999999;
       relative_line_numbers = true;
       show_completions_on_input = false;
       features = { edit_predicton_provider = "zed"; };

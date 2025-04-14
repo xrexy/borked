@@ -12,7 +12,8 @@
 
     "modules-left": [
         "custom/appmenu",
-        "group/quicklinks"
+        "group/quicklinks",
+        "custom/spotify"
         // "hyprland/workspaces"
     ],
     "modules-center": [
@@ -20,7 +21,7 @@
     ],
     "modules-right": [
         "pulseaudio",
-        "network",
+        // "network",
         "cpu",
         "memory",
         // "keyboard-state",

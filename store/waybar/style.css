@@ -326,6 +326,18 @@ window#waybar.empty #window {
 }
 
 /* -----------------------------------------------------
+ * Spotify
+ * ----------------------------------------------------- */
+
+.custom-spotify {
+    background-color: @backgroundlight;
+    color: @textcolor2;
+    border-radius: 15px;
+    margin: 10px 10px 10px 0px;
+    padding: 0 10px;
+}
+
+/* -----------------------------------------------------
  * Other
  * ----------------------------------------------------- */
 

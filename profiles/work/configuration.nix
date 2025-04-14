@@ -24,6 +24,8 @@
     ../../system/app/bitwarden.nix
     ../../system/app/discord.nix
 
+    ../../system/bin/mediaplayer.nix
+
     ../../system/services
 
     ../../system/wm/hyprland.nix
@@ -46,7 +48,6 @@
     starship
     htop
     alacritty
-    dmenu
   ];
 
   # Enable ram swap
