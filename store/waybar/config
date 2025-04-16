@@ -17,7 +17,8 @@
         // "hyprland/workspaces"
     ],
     "modules-center": [
-        "hyprland/window"
+        // "hyprland/window",
+        "wlr/taskbar"
     ],
     "modules-right": [
         "pulseaudio",

@@ -203,5 +203,19 @@
     "on-scroll-up": "playerctl -p spotify next",
     "on-scroll-down": "playerctl -p spotify previous",
     "exec-if": "pgrep spotify"
+  },
+
+  "wlr/taskbar": {
+    "format": "{icon} {name}",
+    "tooltip-format": "{name}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "on-click-right": "fullscreen",
+    "ignore-list": ["Alacritty"],
+    "app_ids-mapping": {},
+    "rewrite": {
+      "Brave Web Browser": "Brave",
+      "kitty": "Terminal"
+    }
   }
 }

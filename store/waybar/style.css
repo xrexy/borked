@@ -65,11 +65,11 @@ window#waybar {
     transition: all 0.3s ease-in-out;
 }
 
-#workspaces button:hover {
+/* #workspaces button:hover {
     color: @textcolor1;
     background: @workspacesbackground2;
     border-radius: 15px;
-}
+} */
 
 /* -----------------------------------------------------
  * Tooltips
@@ -119,10 +119,27 @@ window#waybar.empty #window {
     border: 3px solid @backgroundlight;
 }
 
+#taskbar button:hover {
+    border: 2px dashed @backgrounddark;
+    background: @backgroundlight;
+    font-weight: 400;
+}
+
 #taskbar button {
     margin: 0;
     border-radius: 15px;
-    padding: 0px 5px 0px 5px;
+    padding: 0px 7.5px 0px 7.5px;
+    color: black;
+    border: 2px solid transparent;
+}
+
+#taskbar button.active {
+    border: 2px dashed @backgrounddark;
+}
+
+#taskbar.empty {
+    background: transparent;
+    border: none;
 }
 
 /* -----------------------------------------------------
