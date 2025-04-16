@@ -19,7 +19,6 @@ in {
     hyprcursor
     hyprlock
     hypridle
-    hyprpaper
     wezterm
     helix
     zathura
