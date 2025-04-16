@@ -1,4 +1,4 @@
-{ pkgs, systemSettings, userSettings, ... }:
+{ pkgs, inputs, systemSettings, userSettings, ... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -34,6 +34,8 @@
 
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
+    inputs.swww.packages.${systemSettings.system}.swww
+
     vim
     kitty
     wget
