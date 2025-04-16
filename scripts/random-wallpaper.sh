@@ -57,6 +57,6 @@ fi
 echo "Setting new wallpaper: $random_image"
 
 # Set the wallpaper using swww
-swww img "$random_image" --transition-type=random --transition-fps=120
+swww img "$random_image" --transition-type=random --transition-fps=120 --resize="crop"
 
 echo "Wallpaper set successfully"
