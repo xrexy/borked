@@ -1,18 +1,20 @@
 {
   "custom/quicklink1": {
     "format": " ",
-    "on-click": "~/.config/ml4w/apps/ML4W_Hyprland_Settings-x86_64.AppImage",
-    "tooltip-format": "Open Hyprland Settings"
+    "on-click": "zed ~/.dotfiles",
+    "tooltip-format": "Edit .dotfiles"
   },
   "custom/quicklink2": {
     "format": " ",
-    "on-click": "~/.config/ml4w/settings/browser.sh",
-    "tooltip-format": "Open the browser"
+    "on-click": "((pkill -0 -x brave || pkill -0 -x .brave-wrapped) && hyprctl dispatch focuswindow class:Brave-browser) || brave",
+    "on-click-right": "brave",
+    "tooltip-format": "Open Brave"
   },
   "custom/quicklink3": {
     "format": " ",
-    "on-click": "~/.config/ml4w/settings/filemanager.sh",
-    "tooltip-format": "Open the filemanager"
+    "on-click": "thunar ~",
+    "on-click-right": "thunar /",
+    "tooltip-format": "Open Thunar"
   },
   "custom/quicklinkempty": {},
   "group/quicklinks": {
@@ -20,8 +22,8 @@
     "modules": [
       "custom/quicklink1",
       "custom/quicklink2",
-      "custom/quicklink3",
-      "custom/quicklinkempty"
+      "custom/quicklink3"
+      // "custom/quicklinkempty"
     ]
   }
 }
