@@ -1,7 +1,7 @@
 {
   "custom/quicklink1": {
     "format": " ",
-    "on-click": "zed ~/.dotfiles",
+    "on-click": "zeditor ~/.dotfiles",
     "tooltip-format": "Edit .dotfiles"
   },
   "custom/quicklink2": {
