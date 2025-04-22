@@ -9,7 +9,6 @@
 
   programs.direnv.enable = true;
   programs.fish.enable = true;
-  programs.thunar.enable = true;
   programs.xfconf.enable = true;
 
   services.upower.enable = true;

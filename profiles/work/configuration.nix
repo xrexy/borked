@@ -23,6 +23,7 @@
     ../../system/app/noisetorch.nix
     ../../system/app/bitwarden.nix
     ../../system/app/discord.nix
+    ../../system/app/thunar.nix
 
     ../../system/bin/mediaplayer.nix
 
