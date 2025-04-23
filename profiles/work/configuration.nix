@@ -51,6 +51,7 @@
     starship
     htop
     alacritty
+    hoppscotch
   ];
 
   # Enable ram swap
