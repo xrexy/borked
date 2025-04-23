@@ -15,7 +15,6 @@
     ../../user/app/bun.nix
     ../../user/app/kitty.nix
     ../../user/app/zoxide.nix
-    ../../user/services/cliphist.nix
     (./. + "../../../user/app/browser" + ("/" + userSettings.browser) + ".nix")
   ];
 
