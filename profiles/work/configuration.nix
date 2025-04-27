@@ -53,6 +53,7 @@
     htop
     alacritty
     hoppscotch
+    android-studio
   ];
 
   # Enable ram swap
