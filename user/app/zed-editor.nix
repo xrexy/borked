@@ -22,14 +22,16 @@
       "vue"
       "emmet"
       "toml"
+      "one-black-theme"
     ];
 
     userSettings = {
-      theme = "Warp One Dark";
+      theme = "One Black";
       icon_theme = "Bearded Icon Theme";
       vim_mode = true;
       ui_font_size = 14;
       buffer_font_size = 12;
+      buffer_font_family = "Monocraft";
 
       lsp_highlight_debounce = 9999999999;
       relative_line_numbers = true;
