@@ -164,7 +164,9 @@
       "default": ["", " ", " "]
     },
     // TODO focus on it if it's already open
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
+    "on-middle-click": "pamixer --allow-boost --set-volume 150",
+    "on-click-right": "pamixer --allow-boost --set-volume 100"
   },
 
   // Bluetooth
