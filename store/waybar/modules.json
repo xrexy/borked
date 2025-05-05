@@ -153,6 +153,7 @@
     "format-muted": " {format_source}",
     "format-source": "{volume}% ",
     "format-source-muted": "",
+    "max-volume": 150,
     "format-icons": {
       "headphone": "",
       "hands-free": "",
