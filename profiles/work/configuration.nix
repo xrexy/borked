@@ -60,6 +60,7 @@
   zramSwap.enable = true;
 
   networking.hostName = systemSettings.hostname;
+  networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
 
   # Enable networking
   networking.networkmanager.enable = true;
