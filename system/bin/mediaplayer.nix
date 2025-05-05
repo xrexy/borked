@@ -14,6 +14,8 @@ let
     # Make sure Python can find the modules
     export PYTHONPATH="${python}/${python.sitePackages}:$PYTHONPATH"
 
+    export MEDIAPLAYER_MAX_LENGTH=45
+
     # Run the Python script
     exec ${python}/bin/python3 "$HOME/.dotfiles/scripts/mediaplayer.py" "$@"
   '';

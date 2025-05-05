@@ -18,6 +18,8 @@ import json  # noqa: E402
 #
 players_data = {}
 
+MAX_TITLE_LENGTH = 64
+
 
 def load_env_file(filepath: str) -> None:
     """
@@ -72,19 +74,27 @@ def write_output(track, artist, playing, player, tooltip_text):
     prefix = prefix_playing if playing else prefix_paused
     max_length = max_length_module
 
+    # Escape ampersands in artist and track for Pango markup
+    escaped_artist = artist.replace("&", "&amp;")
+    escaped_track = track.replace("&", "&amp;")
+
     # Calculate the total length and truncate track if necessary
-    total_length = len(track) + len(artist)
+    total_length = len(escaped_track) + len(escaped_artist)
     if total_length > max_length:
-        available_length = max(0, max_length - len(artist))
-        track = (
-            f"{track[:available_length]}…" if len(track) > available_length else track
+        available_length = max(0, max_length - len(escaped_artist))
+        escaped_track = (
+            f"{escaped_track[:available_length - 1]}…"
+            if len(escaped_track) > available_length and available_length > 0
+            else escaped_track[:available_length]
         )
+    elif len(escaped_track) > MAX_TITLE_LENGTH:
+        escaped_track = f"{escaped_track[:MAX_TITLE_LENGTH-1]}…"
 
     # Generate the "text" based on the presence of track and artist
-    if track and not artist:
-        output_text = f"{prefix} <b>{track}</b>"
-    elif track and artist:
-        output_text = f"{prefix} {artist}  <b>{track}</b>"
+    if escaped_track and not escaped_artist:
+        output_text = f"{prefix} <b>{escaped_track}</b>"
+    elif escaped_track and escaped_artist:
+        output_text = f"{prefix} {escaped_artist}  <b>{escaped_track}</b>"
     else:
         output_text = "<b>Nothing playing</b>"
 
