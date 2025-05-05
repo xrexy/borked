@@ -195,7 +195,7 @@
   },
 
   "custom/spotify": {
-    "exec": "mediaplayer --player spotify", // mediaplayer binary is a wrapper around scripts/mediaplayer.py managed by nix.
+    "exec": "mediaplayer --player chromium", // mediaplayer binary is a wrapper around scripts/mediaplayer.py managed by nix.
     "format": "{}",
     "return-type": "json",
     "on-click": "playerctl -p spotify play-pause",
