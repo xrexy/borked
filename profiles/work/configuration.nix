@@ -37,7 +37,7 @@
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
     inputs.swww.packages.${systemSettings.system}.swww
-
+    nix-prefetch-scripts
     vim
     kitty
     wget
