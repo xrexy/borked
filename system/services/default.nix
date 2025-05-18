@@ -1,7 +1,13 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./dbus.nix ./pipewire.nix ./zerotierone.nix ./gnome-keyring.nix ];
+  imports = [
+    ./dbus.nix
+    ./pipewire.nix
+    ./zerotierone.nix
+    ./gnome-keyring.nix
+    ./easyeffects.nix
+  ];
 
   # TODO add usbguard
 
