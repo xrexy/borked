@@ -25,6 +25,7 @@
     ../../system/app/discord.nix
     ../../system/app/thunar.nix
     ../../system/app/telegram.nix
+    ../../system/app/dysk.nix
 
     ../../system/bin/mediaplayer.nix
 
