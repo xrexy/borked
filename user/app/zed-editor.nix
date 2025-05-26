@@ -26,6 +26,12 @@
     ];
 
     userSettings = {
+      lsp = {
+        nil = {
+          initialization_options = { formatting.command = [ "nixfmt" ]; };
+        };
+        nix = { binary = { path_lookup = true; }; };
+      };
       theme = "One Black";
       icon_theme = "Bearded Icon Theme";
       vim_mode = true;
