@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = (with pkgs; [
@@ -23,6 +23,7 @@
       "emmet"
       "toml"
       "one-black-theme"
+      "discord-presence"
     ];
 
     userSettings = {
@@ -31,6 +32,50 @@
           initialization_options = { formatting.command = [ "nixfmt" ]; };
         };
         nix = { binary = { path_lookup = true; }; };
+        discord_presence = {
+          initialization_options = {
+            # Application ID for the rich presence (don't touch it unless you know what you're doing)
+            application_id = "1263505205522337886";
+            # Base URL for all language icons
+            base_icons_url =
+              "https://raw.githubusercontent.com/xhyrom/zed-discord-presence/main/assets/icons/";
+
+            state = "Working on {filename}";
+            details = "In {workspace}";
+            # URL for the large image
+            large_image =
+              "{base_icons_url}/{language:lo}.png"; # :lo lowercase the language name
+            large_text = "{language:u}"; # :u capitalizes the first letter
+            # URL for the small image
+            small_image = "{base_icons_url}/zed.png";
+            small_text = "Zed";
+
+            # Idle settings - when you're inactive
+            idle = {
+              timeout = 300; # Idle timeout in seconds (300 seconds = 5 minutes)
+
+              # Action to take when idle
+              # `change_activity` - changes the activity to idle with the following details
+              # `clear_activity` - clears the activity (hides it)
+              action = "change_activity";
+
+              state = "My final brain cell is trying to put something together";
+              details = "(who let bro cook)";
+              large_image = "{base_icons_url}/zed.png";
+              large_text = "Zed";
+              small_image = "{base_icons_url}/nix.png";
+              small_text = "boo";
+            };
+
+            # Rules to disable presence in specific workspaces
+            rules = {
+              mode = "blacklist"; # Can also be "whitelist"
+              paths = [ ];
+            };
+
+            git_integration = true;
+          };
+        };
       };
       theme = "pywal";
       icon_theme = "Bearded Icon Theme";
