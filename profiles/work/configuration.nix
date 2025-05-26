@@ -26,6 +26,7 @@
     ../../system/app/thunar.nix
     ../../system/app/telegram.nix
     ../../system/app/dysk.nix
+    ../../system/app/zed-editor.nix
 
     ../../system/bin
 
