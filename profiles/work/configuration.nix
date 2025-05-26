@@ -27,7 +27,7 @@
     ../../system/app/telegram.nix
     ../../system/app/dysk.nix
 
-    ../../system/bin/mediaplayer.nix
+    ../../system/bin
 
     ../../system/services
 
@@ -41,6 +41,7 @@
     nix-prefetch-scripts
     vim
     kitty
+    tldr
     wget
     home-manager
     fastfetch

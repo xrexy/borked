@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   home.packages = (with pkgs; [
@@ -32,7 +32,7 @@
         };
         nix = { binary = { path_lookup = true; }; };
       };
-      theme = "One Black";
+      theme = "pywal";
       icon_theme = "Bearded Icon Theme";
       vim_mode = true;
       ui_font_size = 14;
