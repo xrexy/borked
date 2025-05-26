@@ -55,6 +55,8 @@
     alacritty
     hoppscotch
     android-studio
+
+    google-chrome
   ];
 
   # Enable ram swap
