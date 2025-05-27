@@ -5,14 +5,11 @@ let
     BACKGROUND_DIR="${userSettings.homeDirectory}/.dotfiles/wallpapers"
 
     apply() {
-        local selected="$1"
-        shift
+        COLORMAP_FILE="${userSettings.homeDirectory}/.config/colormap.local"
 
         # Apply the selected wallpaper
-        wal -i "$selected" "$@"
-
-        # Reload apps
-        hyprctl reload
+        echo "Wallpaper: $1" > $COLORMAP_FILE
+        matugen image "$1" --show-colors -m "dark" >> $COLORMAP_FILE
     }
 
     menu() {
@@ -28,7 +25,6 @@ let
     case "$#" in
         0) menu;;
         1) apply "$1";;
-        2) apply "$1" --theme $2;;
         *) echo "Invalid option";;
     esac
   '';

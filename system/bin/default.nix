@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ./changewallpaper.nix ./mediaplayer.nix ];
+  imports = [ ./changewallpaper.nix ./mediaplayer.nix ./colormap.nix ];
 }

@@ -77,7 +77,7 @@
           };
         };
       };
-      theme = "pywal";
+      theme = "system-matugen";
       icon_theme = "Bearded Icon Theme";
       vim_mode = true;
       ui_font_size = 14;

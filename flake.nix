@@ -32,8 +32,29 @@
       };
 
       lib = nixpkgs.lib;
+
       pkgs = nixpkgs.legacyPackages.${systemSettings.system};
       pkgs-stable = nixpkgs-stable.legacyPackages.${systemSettings.system};
+
+      overlays = [
+        (final: prev: {
+          fabric-run-widget =
+            inputs.fabric.packages.${systemSettings.system}.run-widget;
+        })
+        (final: prev: {
+          fabric = inputs.fabric.packages.${systemSettings.system}.default;
+        })
+        (final: prev: {
+          fabric-cli =
+            inputs.fabric-cli.packages.${systemSettings.system}.default;
+        })
+        (final: prev: {
+          fabric-gray =
+            inputs.fabric-gray.packages.${systemSettings.system}.default;
+        })
+
+        inputs.fabric.overlays.${systemSettings.system}.default
+      ];
     in {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
@@ -43,26 +64,42 @@
               + "/configuration.nix")
           ];
           specialArgs = {
+            pkgs = import nixpkgs {
+              system = systemSettings.system;
+              overlays = overlays;
+              config.allowUnfree = true;
+            };
+            pkgs-stable = import nixpkgs-stable {
+              system = systemSettings.system;
+              config.allowUnfree = true;
+            };
             inherit systemSettings;
             inherit userSettings;
             inherit inputs;
-            inherit pkgs-stable;
           };
         };
       };
 
       homeConfigurations = {
         desktop = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
+          pkgs = import nixpkgs {
+            system = systemSettings.system;
+            overlays = overlays;
+            config.allowUnfree = true;
+          };
 
           modules = [
             (./. + "/profiles" + ("/" + systemSettings.profile) + "/home.nix")
           ];
           extraSpecialArgs = {
+            pkgs-stable = import nixpkgs-stable {
+              system = systemSettings.system;
+              config.allowUnfree = true;
+            };
+
             inherit systemSettings;
             inherit userSettings;
             inherit inputs;
-            inherit pkgs-stable;
           };
         };
       };
@@ -83,5 +120,18 @@
     stylix.url = "github:danth/stylix";
 
     swww.url = "github:LGFae/swww";
+
+    fabric = {
+      url = "github:Fabric-Development/fabric";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    fabric-gray = {
+      url = "github:Fabric-Development/gray";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    fabric-cli = {
+      url = "github:HeyImKyu/fabric-cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }
