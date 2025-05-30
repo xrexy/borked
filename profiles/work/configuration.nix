@@ -28,6 +28,7 @@
     ../../system/app/dysk.nix
     ../../system/app/zed-editor.nix
     ../../system/app/libreoffice.nix
+    ../../system/app/nomachine.nix
 
     ../../system/bin
 
