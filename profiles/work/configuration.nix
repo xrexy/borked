@@ -29,6 +29,7 @@
     ../../system/app/zed-editor.nix
     ../../system/app/libreoffice.nix
     ../../system/app/nomachine.nix
+    ../../system/app/teamspeak.nix
 
     ../../system/bin
 
