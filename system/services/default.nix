@@ -38,9 +38,8 @@
     swappy
     ffmpeg_6-full
     wl-screenrec
-    wl-clipboard
-    wl-clip-persist
-    cliphist
+    # wl-clipboard
+    # wl-clip-persist
     xdg-utils
     wtype
     wlrctl

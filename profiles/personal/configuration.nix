@@ -8,5 +8,12 @@
     ../../system/app/piper.nix
   ];
 
-  environment.systemPackages = with pkgs; [ stremio r2modman youtube-music ];
+  environment.systemPackages = with pkgs; [
+    stremio
+    r2modman
+    youtube-music
+    anydesk
+    clipse
+    yt-dlp
+  ];
 }

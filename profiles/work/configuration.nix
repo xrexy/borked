@@ -62,6 +62,7 @@
     android-studio
 
     google-chrome
+    ni
   ];
 
   # Enable ram swap

@@ -87,8 +87,8 @@
       lsp_highlight_debounce = 9999999999;
       relative_line_numbers = true;
       show_completions_on_input = false;
-      features = { edit_predicton_provider = "zed"; };
-      edit_predictions = { mode = "subtle"; };
+      # features = { edit_predicton_provider = "zed"; };
+      # edit_predictions = { mode = "subtle"; };
       project_panel = { dock = "right"; };
       assistant = {
         dock = "left";
