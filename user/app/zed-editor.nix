@@ -17,7 +17,6 @@
     extensions = [
       "html"
       "nix"
-      "warp-one-dark"
       "bearded-icon-theme"
       "vue"
       "emmet"

@@ -51,4 +51,4 @@ post_hook = "fabric-cli exec ax-shell 'app.set_css()' &"
 
 [templates.zeditor]
 input_path = "~/.dotfiles/store/$matugen/templates/zed.json"
-output_path = "~/.config/zed/themes/system-matugen.json"
+output_path = "~/.config/zed/themes/matugen.json"
