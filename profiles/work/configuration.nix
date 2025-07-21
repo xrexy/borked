@@ -60,6 +60,7 @@
     alacritty
     hoppscotch
     android-studio
+    ngrok
 
     google-chrome
     ni
