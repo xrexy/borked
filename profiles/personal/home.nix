@@ -18,6 +18,6 @@
   imports = [
     ../work/home.nix
     ../../user/app/protonup.nix
-    ../../user/app/ax-shell.nix
+    # ../../user/app/ax-shell.nix
   ];
 }

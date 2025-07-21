@@ -37,23 +37,23 @@
       pkgs-stable = nixpkgs-stable.legacyPackages.${systemSettings.system};
 
       overlays = [
-        (final: prev: {
-          fabric-run-widget =
-            inputs.fabric.packages.${systemSettings.system}.run-widget;
-        })
-        (final: prev: {
-          fabric = inputs.fabric.packages.${systemSettings.system}.default;
-        })
-        (final: prev: {
-          fabric-cli =
-            inputs.fabric-cli.packages.${systemSettings.system}.default;
-        })
-        (final: prev: {
-          fabric-gray =
-            inputs.fabric-gray.packages.${systemSettings.system}.default;
-        })
+        #   (final: prev: {
+        #     fabric-run-widget =
+        #       inputs.fabric.packages.${systemSettings.system}.run-widget;
+        #   })
+        #   (final: prev: {
+        #     fabric = inputs.fabric.packages.${systemSettings.system}.default;
+        #   })
+        #   (final: prev: {
+        #     fabric-cli =
+        #       inputs.fabric-cli.packages.${systemSettings.system}.default;
+        #   })
+        #   (final: prev: {
+        #     fabric-gray =
+        #       inputs.fabric-gray.packages.${systemSettings.system}.default;
+        #   })
 
-        inputs.fabric.overlays.${systemSettings.system}.default
+        #   inputs.fabric.overlays.${systemSettings.system}.default
       ];
     in {
       nixosConfigurations = {
@@ -121,17 +121,17 @@
 
     swww.url = "github:LGFae/swww";
 
-    fabric = {
-      url = "github:Fabric-Development/fabric";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    fabric-gray = {
-      url = "github:Fabric-Development/gray";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    fabric-cli = {
-      url = "github:HeyImKyu/fabric-cli";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # fabric = {
+    #   url = "github:Fabric-Development/fabric";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # fabric-gray = {
+    #   url = "github:Fabric-Development/gray";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # fabric-cli = {
+    #   url = "github:HeyImKyu/fabric-cli";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 }

@@ -44,10 +44,10 @@ blend = true
 input_path = "~/.dotfiles/store/$matugen/templates/hyprland.conf"
 output_path = "~/.config/matugen/out/hyprland.conf"
 
-[templates.ax-shell]
-input_path = "~/.config/Ax-Shell/config/matugen/templates/ax-shell.css"
-output_path = "~/.config/matugen/out/ax-shell.css"
-post_hook = "fabric-cli exec ax-shell 'app.set_css()' &"
+# [templates.ax-shell]
+# input_path = "~/.config/Ax-Shell/config/matugen/templates/ax-shell.css"
+# output_path = "~/.config/matugen/out/ax-shell.css"
+# post_hook = "fabric-cli exec ax-shell 'app.set_css()' &"
 
 [templates.zeditor]
 input_path = "~/.dotfiles/store/$matugen/templates/zed.json"

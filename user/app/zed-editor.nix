@@ -78,13 +78,13 @@
       };
       theme = "system-matugen";
       icon_theme = "Bearded Icon Theme";
-      vim_mode = true;
+      vim_mode = false;
       ui_font_size = 14;
       buffer_font_size = 12;
       buffer_font_family = "Monocraft";
 
       lsp_highlight_debounce = 9999999999;
-      relative_line_numbers = true;
+      relative_line_numbers = false;
       show_completions_on_input = false;
       # features = { edit_predicton_provider = "zed"; };
       # edit_predictions = { mode = "subtle"; };

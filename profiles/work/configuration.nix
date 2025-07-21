@@ -63,6 +63,9 @@
 
     google-chrome
     ni
+    pnpm
+    tidal-hifi
+    tidal-dl
   ];
 
   # Enable ram swap
@@ -110,7 +113,7 @@
     allowedUDPPorts = [ 25565 ];
   };
 
-  programs.ssh = { startAgent = true; };
+  # programs.ssh = { startAgent = true; };
 
   xdg.portal = {
     enable = true;
