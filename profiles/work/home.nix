@@ -15,6 +15,7 @@
     ../../user/app/bun.nix
     ../../user/app/kitty.nix
     ../../user/app/zoxide.nix
+    ../../user/app/matugen
     (./. + "../../../user/app/browser" + ("/" + userSettings.browser) + ".nix")
   ];
 

@@ -55,14 +55,15 @@
     grimblast
     unrar
     p7zip
-    starship
+    openssl
     htop
     alacritty
     hoppscotch
     android-studio
     ngrok
-
+    cargo
     google-chrome
+    matugen
     ni
     pnpm
     tidal-hifi

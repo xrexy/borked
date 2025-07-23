@@ -7,6 +7,7 @@
     ./zerotierone.nix
     ./gnome-keyring.nix
     ./easyeffects.nix
+    ./docker.nix
   ];
 
   # TODO add usbguard
