@@ -86,10 +86,10 @@
       theme = "system-matugen";
       icon_theme = "Bearded Icon Theme";
       vim_mode = false;
-      ui_font_size = 14;
-      buffer_font_size = 12;
-      # buffer_font_family = "Monocraft";
-      buffer_font_family = "CaskaydiaCove Nerd Font";
+      ui_font_size = 12;
+      buffer_font_size = 10;
+      buffer_font_family = "Monocraft";
+      ui_font_family = "Monocraft";
 
       lsp_highlight_debounce = 9999999999;
       relative_line_numbers = false;
@@ -97,13 +97,15 @@
       # features = { edit_predicton_provider = "zed"; };
       # edit_predictions = { mode = "subtle"; };
       project_panel = { dock = "right"; };
-      assistant = {
+      agent = {
         dock = "left";
-        version = "2";
         default_model = {
           provider = "zed.dev";
           model = "claude-3-7-sonnet-latest";
         };
+        single_file_review = true;
+        # TODO setup feature-specific models
+        # https://zed.dev/docs/ai/agent-settings#feature-specific-models
       };
       languages = {
         Nix = {
