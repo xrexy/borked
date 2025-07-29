@@ -27,9 +27,16 @@
 
     userSettings = {
       lsp = {
-        nil = {
-          initialization_options = { formatting.command = [ "nixfmt" ]; };
+        nixd = {
+          settings = {
+            nixpkgs = {
+              expr =
+                "import (builtins.getFlake (builtins.toString ./.)).inputs.nixpkgs {}";
+            };
+            formatting = { command = [ "alejandra" ]; };
+          };
         };
+        qml = { binary = { arguments = [ "-E" ]; }; };
         nix = { binary = { path_lookup = true; }; };
         discord_presence = {
           initialization_options = {
@@ -81,7 +88,8 @@
       vim_mode = false;
       ui_font_size = 14;
       buffer_font_size = 12;
-      buffer_font_family = "Monocraft";
+      # buffer_font_family = "Monocraft";
+      buffer_font_family = "CaskaydiaCove Nerd Font";
 
       lsp_highlight_debounce = 9999999999;
       relative_line_numbers = false;
@@ -99,8 +107,19 @@
       };
       languages = {
         Nix = {
-          language_servers = [ "nil" "!nixd" ];
+          language_servers = [ "nixd" "!nil" ];
           formatter = { external = { command = "nixfmt"; }; };
+        };
+        QML = {
+          formatter = {
+            external = {
+              command = "sh";
+              arguments = [
+                "-c"
+                "tmp=$(mktemp --suffix .qml); cat > $tmp; qmlformat $tmp"
+              ];
+            };
+          };
         };
       };
     };
