@@ -46,15 +46,12 @@
             base_icons_url =
               "https://raw.githubusercontent.com/xhyrom/zed-discord-presence/main/assets/icons/";
 
-            state = "Working on {filename}";
-            details = "In {workspace}";
-            # URL for the large image
-            large_image =
-              "{base_icons_url}/{language:lo}.png"; # :lo lowercase the language name
-            large_text = "{language:u}"; # :u capitalizes the first letter
-            # URL for the small image
-            small_image = "{base_icons_url}/zed.png";
-            small_text = "Zed";
+            state = "My final brain cell is trying to put something together";
+            details = "(who let bro cook)";
+            large_image = "{base_icons_url}/zed.png";
+            large_text = "Zed";
+            small_image = "{base_icons_url}/nix.png";
+            small_text = "boo";
 
             # Idle settings - when you're inactive
             idle = {
@@ -64,13 +61,8 @@
               # `change_activity` - changes the activity to idle with the following details
               # `clear_activity` - clears the activity (hides it)
               action = "change_activity";
+              state = "bing chilling";
 
-              state = "My final brain cell is trying to put something together";
-              details = "(who let bro cook)";
-              large_image = "{base_icons_url}/zed.png";
-              large_text = "Zed";
-              small_image = "{base_icons_url}/nix.png";
-              small_text = "boo";
             };
 
             # Rules to disable presence in specific workspaces
