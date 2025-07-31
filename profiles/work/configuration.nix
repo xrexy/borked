@@ -62,6 +62,7 @@
     android-studio
     ngrok
     cargo
+    rustc
     google-chrome
     matugen
     ni
