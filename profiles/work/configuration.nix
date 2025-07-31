@@ -63,6 +63,7 @@
     ngrok
     cargo
     rustc
+    gcc
     google-chrome
     matugen
     ni
