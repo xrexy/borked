@@ -69,6 +69,7 @@
     pnpm
     tidal-hifi
     tidal-dl
+    cloudflared
   ];
 
   # Enable ram swap
