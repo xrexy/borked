@@ -30,6 +30,7 @@
     ../../system/app/libreoffice.nix
     ../../system/app/nomachine.nix
     ../../system/app/teamspeak.nix
+    ../../system/app/rust.nix
 
     ../../system/bin
 
@@ -61,8 +62,6 @@
     hoppscotch
     android-studio
     ngrok
-    cargo
-    rustc
     gcc
     google-chrome
     matugen
