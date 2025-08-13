@@ -70,6 +70,7 @@
     tidal-hifi
     tidal-dl
     cloudflared
+    bruno
   ];
 
   # Enable ram swap
