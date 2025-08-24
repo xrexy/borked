@@ -15,5 +15,9 @@
     anydesk
     clipse
     yt-dlp
+    nicotine-plus
+    clementine
+    ani-cli
+    ani-skip
   ];
 }

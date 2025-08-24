@@ -37,6 +37,8 @@
       pkgs-stable = nixpkgs-stable.legacyPackages.${systemSettings.system};
 
       overlays = [ inputs.rust-overlay.overlays.default ];
+
+      inherit (builtins) mapAttrs;
     in {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
@@ -82,6 +84,9 @@
             inherit systemSettings;
             inherit userSettings;
             inherit inputs;
+            flakePkgs = mapAttrs (_: input:
+              input.legacyPackages.${systemSettings.system} or { }
+              // input.packages.${systemSettings.system} or { }) inputs;
           };
         };
       };
@@ -96,6 +101,11 @@
 
     home-manager-stable.url = "github:nix-community/home-manager/release-25.05";
     home-manager-stable.inputs.nixpkgs.follows = "nixpkgs-stable";
+
+    jerry = {
+      url = "github:justchokingaround/jerry";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     hyprland.url = "github:hyprwm/Hyprland";
 

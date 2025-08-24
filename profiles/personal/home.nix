@@ -1,4 +1,4 @@
-{ userSettings, config, ... }:
+{ userSettings, config, flakePkgs, ... }:
 
 {
   programs.home-manager.enable = true;
@@ -20,4 +20,7 @@
     ../../user/app/protonup.nix
     # ../../user/app/ax-shell.nix
   ];
+
+  home.packages =
+    [ (flakePkgs.jerry.jerry.override { mpv = config.programs.mpv.package; }) ];
 }
