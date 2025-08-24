@@ -10,7 +10,7 @@
   qt.style = "gtk2";
 
   environment.systemPackages = with pkgs; [
-    waybar
+    # https://github.com/caelestia-dots/shell/blob/main/nix/default.nix - managed by home manager
     rofi-wayland
     dunst
     libnotify

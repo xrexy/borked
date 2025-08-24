@@ -74,6 +74,7 @@
 
           modules = [
             (./. + "/profiles" + ("/" + systemSettings.profile) + "/home.nix")
+            inputs.caelestia-shell.homeManagerModules.default
           ];
           extraSpecialArgs = {
             pkgs-stable = import nixpkgs-stable {
@@ -87,6 +88,8 @@
             flakePkgs = mapAttrs (_: input:
               input.legacyPackages.${systemSettings.system} or { }
               // input.packages.${systemSettings.system} or { }) inputs;
+
+            caelestiaModule = inputs.caelestia-shell.homeManagerModules.default;
           };
         };
       };
@@ -115,5 +118,15 @@
 
     rust-overlay.url = "github:oxalica/rust-overlay";
     rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
+
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    caelestia-cli = {
+      url = "github:caelestia-dots/cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

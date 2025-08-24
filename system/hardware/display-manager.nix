@@ -13,5 +13,5 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ greetd.tuigreet ];
+  environment.systemPackages = with pkgs; [ tuigreet ];
 }

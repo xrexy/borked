@@ -100,6 +100,98 @@
         "type": "github"
       }
     },
+    "caelestia-cli": {
+      "inputs": {
+        "caelestia-shell": "caelestia-shell",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1756001216,
+        "narHash": "sha256-JLC9yS5dw9dHee9DgPigLDrxB/JPduyj5MuPqo8y3eQ=",
+        "owner": "caelestia-dots",
+        "repo": "cli",
+        "rev": "4782799b55d726ac514e4dc7e7c5780d4b13c6a0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "caelestia-dots",
+        "repo": "cli",
+        "type": "github"
+      }
+    },
+    "caelestia-cli_2": {
+      "inputs": {
+        "caelestia-shell": [
+          "caelestia-shell"
+        ],
+        "nixpkgs": [
+          "caelestia-shell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1755952278,
+        "narHash": "sha256-Y4F8sFJ3P3MExSuwDAnccfG1RxU4VdoW9yDRtDqG8qA=",
+        "owner": "caelestia-dots",
+        "repo": "cli",
+        "rev": "db1e0da5bbd259f1218b4ae54d0327b0c4a46f78",
+        "type": "github"
+      },
+      "original": {
+        "owner": "caelestia-dots",
+        "repo": "cli",
+        "type": "github"
+      }
+    },
+    "caelestia-shell": {
+      "inputs": {
+        "caelestia-cli": [
+          "caelestia-cli"
+        ],
+        "nixpkgs": [
+          "caelestia-cli",
+          "nixpkgs"
+        ],
+        "quickshell": "quickshell"
+      },
+      "locked": {
+        "lastModified": 1755998423,
+        "narHash": "sha256-Xn8eZ5q5VRSEQCE13dCeiH1a/NJBmc67XadvCaefNXI=",
+        "owner": "caelestia-dots",
+        "repo": "shell",
+        "rev": "3f160d7b1d989bfc3c5b15c3c9c009000cf3a331",
+        "type": "github"
+      },
+      "original": {
+        "owner": "caelestia-dots",
+        "repo": "shell",
+        "type": "github"
+      }
+    },
+    "caelestia-shell_2": {
+      "inputs": {
+        "caelestia-cli": "caelestia-cli_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "quickshell": "quickshell_2"
+      },
+      "locked": {
+        "lastModified": 1756032184,
+        "narHash": "sha256-lSI3Wnk9c1n1Nsm8S8Sfx1QbGT7ILGwFlT5HQmHSzIQ=",
+        "owner": "caelestia-dots",
+        "repo": "shell",
+        "rev": "54921ee354827aac71a435ad9fe903b8667901fc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "caelestia-dots",
+        "repo": "shell",
+        "type": "github"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -696,8 +788,53 @@
         "type": "github"
       }
     },
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "caelestia-cli",
+          "caelestia-shell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1753595452,
+        "narHash": "sha256-vqkSDvh7hWhPvNjMjEDV4KbSCv2jyl2Arh73ZXe274k=",
+        "ref": "refs/heads/master",
+        "rev": "a5431dd02dc23d9ef1680e67777fed00fe5f7cda",
+        "revCount": 665,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      }
+    },
+    "quickshell_2": {
+      "inputs": {
+        "nixpkgs": [
+          "caelestia-shell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1753595452,
+        "narHash": "sha256-vqkSDvh7hWhPvNjMjEDV4KbSCv2jyl2Arh73ZXe274k=",
+        "ref": "refs/heads/master",
+        "rev": "a5431dd02dc23d9ef1680e67777fed00fe5f7cda",
+        "revCount": 665,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      }
+    },
     "root": {
       "inputs": {
+        "caelestia-cli": "caelestia-cli",
+        "caelestia-shell": "caelestia-shell_2",
         "home-manager": "home-manager",
         "home-manager-stable": "home-manager-stable",
         "hyprland": "hyprland",

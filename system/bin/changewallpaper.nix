@@ -10,6 +10,7 @@ let
         # Apply the selected wallpaper
         echo "Wallpaper: $1" > $COLORMAP_FILE
         matugen image "$1" --show-colors -m "dark" >> $COLORMAP_FILE
+        caelestia wallpaper --file "$1"
     }
 
     menu() {

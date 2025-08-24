@@ -1,5 +1,10 @@
 { ... }:
 
 {
-  imports = [ ./changewallpaper.nix ./mediaplayer.nix ./colormap.nix ];
+  imports = [
+    ./changewallpaper.nix
+    ./mediaplayer.nix
+    ./colormap.nix
+    ./hyprland-user-startup.nix
+  ];
 }
