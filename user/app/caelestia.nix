@@ -9,7 +9,6 @@
       };
     settings = {
       paths = {
-        wallpaperDir = "~/.dotfiles/wallpapers";
         # mediaGif TODO abo
         # sessionGif TODO abo
       };
@@ -22,6 +21,10 @@
           networkWidth = 275;
         };
         entries = [
+          {
+            id = "idleInhibitor";
+            enabled = true;
+          }
           # {
           #   id = "logo";
           #   enabled = true;
@@ -57,10 +60,6 @@
           {
             id = "power";
             enabled = true;
-          }
-          {
-            id = "idleInhibitor";
-            enabled = false;
           }
         ];
         status = {

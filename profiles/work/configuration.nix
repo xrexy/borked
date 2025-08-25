@@ -71,6 +71,7 @@
     tidal-dl
     cloudflared
     bruno
+    btop
   ];
 
   # Enable ram swap

@@ -14,10 +14,14 @@
     youtube-music
     anydesk
     clipse
+    cliphist
     yt-dlp
     nicotine-plus
     clementine
     ani-cli
     ani-skip
+    trash-cli
+    geoclue2
+    gammastep
   ];
 }
